@@ -1,0 +1,27 @@
+@import "tailwindcss";
+/* @plugin nombre
+para añadir un plugin*/
+
+/*Apply nos permite utilizar clases de tailwind dentro de nuestro css*/
+.social-button {
+  @apply size-12 flex items-center justify-center rounded-full  hover:scale-110 transition-transform;
+}
+/*Puedes crear tus propios temas con tailwind*/
+/*Esto es para crear tus propios autocompletados*/
+/*Todo lo que creas empieza con --*/
+
+/*Asi añadimos una fuente a tailwind*/
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/inter.woff2") format ("woff2");
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: swap;
+}
+
+@theme {
+  --color-primary: #09f;
+  --color-primary-light: #ceecff;
+  --color-primary-dark: rgb(0, 22, 83);
+  --breakpoint-xs: 350px;
+}

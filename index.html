@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aprendiendo Tailwind</title>
+    <!--Con esta linea de aqui ya podemos utilizar tailwind en modo desarrollo-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!--Una vez tenemos el "tailwind de produccion" solo debemos importar los estilos-->
+    <!-- <link rel="stylesheet" href="./assets/output.css" /> -->
+  </head>
+  <body
+    class="max-w-xl mx-auto bg-gradient-to-b from-black via-blue-950 to-gray-800 border: border-black min-h-screen"
+  >
+    <!--bg es background-->
+    <!--max-w es max-width-->
+    <!--mx es el margin-->
+    <header class="text-white">
+      <!--text- para el color del texto-->
+      <!--Para hacer elementos responsive usamos los breakpoints
+        Ej: sm:size-5
+      Los breakpoints son sm,md,xl,2xl  
+      -->
+
+      <figure class="border-none flex items-center justify-center">
+        <img
+          alt="Imagen mia"
+          src="./assets/Imagen de WhatsApp 2025-05-01 a las 14.47.06_5c423989.jpg"
+          class="border-none mt-3 object-cover h-[430px] w-[410px] mask-radial-at-center mask-radial-from-45% mask-radial-to-80%"
+        />
+        <!--Con animate ponemos animaciones-->
+        <!--Las animaciones personalizadas debes descargarlas e instalarlas-->
+      </figure>
+      <!-- Las mascaras son degradados en este caso empieza en el 45% y se difumina hasta el 80%  -->
+      <!--Puedes poner los valores que a ti te de la gana si los pones entre [] -->
+      <header class="text-center flex-col mt-[0.7px]">
+        <span
+          class="text-sky-400 text-xl font-mono px-3 py-1 border rounded-full items-center justify-center bg-black/60 cursor-crosshair"
+          >@Ale8104</span
+        >
+        <!--Cuando usas un color defines la opacidad con /opacidad -->
+        <h1 class="leading-tight text-3xl font-extrabold">
+          Alejandro Ramos Acosta
+        </h1>
+      </header>
+
+      <section class="flex gap-2 justify-center mt-1">
+        <a
+          href="https://www.twitch.tv/"
+          target="_blank"
+          aria-label="Twitch"
+          title="Ir a twitch(No tengo cuenta)"
+          class="bg-purple-200 size-12 flex items-center justify-center rounded-full hover:bg-purple-400 hover:scale-110 transition-transform"
+        >
+          <!-- title es lo que sale cuando te paras en el boton-->
+          <!-- p- es el padding -->
+          <!-- w- es el width-->
+          <!-- h- es el height-->
+          <!-- A que no adivinas que hace flex -->
+          <!-- size nos hace un cuadrado (w=h)-->
+          <svg width="28" height="28">
+            <!--Asi podemos sacar iconos de los svg-->
+            <use xlink:href="./assets/sprite.svg#twitch"></use>
+          </svg>
+        </a>
+
+        <a
+          href="https://github.com/Alejandro8104"
+          target="_blank"
+          aria-label="Github"
+          title="Ir a github"
+          class="bg-gray-900 border-white size-12 flex items-center justify-center rounded-full hover:bg-gray-800 hover:scale-110 transition-transform"
+        >
+          <svg width="28" height="28">
+            <use xlink:href="./assets/sprite.svg#github"></use>
+          </svg>
+        </a>
+
+        <a
+          href="https://www.instagram.com/alejandro_ramos_acosta_?igsh=OGQ5ZDc2ODk2ZA=="
+          target="_blank"
+          aria-label="Instagram"
+          title="Ir a instagram"
+          class="bg-gradient-to-tr from-yellow-300 via-pink-600 to-purple-600 border-white size-12 flex items-center justify-center rounded-full hover:scale-110 transition-transform"
+        >
+          <!-- degradado hacia top-right desde intermedio hasta -->
+          <svg width="28" height="28">
+            <use xlink:href="./assets/sprite.svg#instagram"></use>
+          </svg>
+        </a>
+
+        <a
+          href="https://www.youtube.com/@AlejandroRamos-wg4bh"
+          target="_blank"
+          aria-label="Youtube"
+          title="Ir a youtube"
+          class="bg-white border-white size-12 flex items-center justify-center rounded-full hover:bg-white hover:scale-110 transition-transform"
+        >
+          <svg width="28" height="28">
+            <use xlink:href="./assets/sprite.svg#youtube"></use>
+          </svg>
+        </a>
+
+        <a
+          href="https://x.com"
+          target="_blank"
+          aria-label="X"
+          title="Ir a x(No tengo cuenta)"
+          class="bg-black border-white size-12 flex items-center justify-center rounded-full hover:bg-gray-950 hover:scale-110 transition-transform"
+        >
+          <svg width="28" height="28">
+            <use xlink:href="./assets/sprite.svg#x"></use>
+          </svg>
+        </a>
+
+        <a
+          href="https://es.linkedin.com/"
+          target="_blank"
+          aria-label="Linkedin"
+          title="Ir a linkedin(No tengo cuenta)"
+          class="bg-blue-200 border-white size-12 flex items-center justify-center rounded-full hover:bg-blue-300 hover:scale-110 transition-transform"
+        >
+          <svg width="28" height="28">
+            <use xlink:href="./assets/sprite.svg#linkedin"></use>
+          </svg>
+        </a>
+      </section>
+
+      <p class="text-center xs:text-amber-400 text-balance">
+        Aspirante a programador fullstack aprendiendo actualmente como utilizar
+        tailwindcss
+      </p>
+    </header>
+
+    <main class="pt-4 px-4 text-white text-[12px]">
+      <div class="grid grid-cols-3 grid-rows-2 gap-2 w-full">
+        <!--Asi de facil es definir las filas y las columnas en los grid-->
+        <a
+          href=""
+          class="min-h-[100px] group relative rounded-3xl overflow-hidden text-center p-7 text-balance bg-gradient-to-br from-cyan-900 via-cyan-700 to-cyan-500 border border-cyan-900 flex flex-col items-start hover:scale-105 hover:contrast-125 transition-all col-span-2"
+        >
+          <!--overflow-hidden es para que se oculte todo lo que quede fuera-->
+          <!--colspan para cuantas columnas va a ocupar el elemento-->
+          <!--group es para hacer de un elemento y sus hijos un grupo-->
+          <span
+            class="z-10 absolute bottom-0 left-2 font-bold text-2xl group-hover:translate-y-[.8px] transition-transform"
+            >React.js</span
+          >
+          <svg
+            width="100"
+            height="100"
+            class="absolute -right-2 -bottom-2 -rotate-6 size-20 group-hover:-rotate-12 group-hover:scale-105 transition-transform"
+          >
+            <!--Podemos utilizar subclases en los grupos-->
+            <use xlink:href="./assets/sprite.svg#react"></use>
+          </svg>
+          <span
+            class="absolute top-2 left-2 border rounded-xl px-1 py-0.5 text-xs"
+            >Librería Frontend</span
+          >
+        </a>
+
+        <!--HTML-->
+        <a
+          href=""
+          class="min-h-[100px] group relative rounded-3xl overflow-hidden text-center p-7 text-balance bg-gradient-to-br from-[#e44026] via-[#f16529] to-white border border-[#e44026] flex flex-col items-start hover:scale-105 hover:contrast-125 transition-all col-span-1"
+        >
+          <span
+            class="z-10 absolute bottom-0 left-2 font-bold text-2xl group-hover:translate-y-[.8px] transition-transform"
+            >HTML</span
+          >
+          <svg
+            width="100"
+            height="100"
+            class="absolute -right-2 -bottom-2 -rotate-6 size-20 group-hover:-rotate-12 group-hover:scale-105 transition-transform"
+          >
+            <use xlink:href="./assets/sprite.svg#html"></use>
+          </svg>
+          <span
+            class="z-10 absolute top-2 left-2 border rounded-xl px-1 py-0.5 text-[10.5px]"
+            >Maquetado</span
+          >
+        </a>
+
+        <!--CSS-->
+        <a
+          href=""
+          class="min-h-[100px] group relative rounded-3xl overflow-hidden text-center p-7 text-balance bg-gradient-to-br from-[#663399] via-[#8e44ad] to-white border border-[#663399] flex flex-col items-start hover:scale-105 hover:contrast-125 transition-all col-span-1"
+        >
+          <span
+            class="absolute bottom-0 left-2 font-bold text-2xl group-hover:translate-y-[.8px] transition-transform z-10"
+            >CSS</span
+          >
+          <svg
+            width="100"
+            height="100"
+            class="absolute -right-2 -bottom-2 -rotate-6 size-20 group-hover:-rotate-12 group-hover:scale-105 transition-transform"
+          >
+            <use xlink:href="./assets/sprite.svg#css"></use>
+          </svg>
+          <span
+            class="absolute top-2 left-2 border rounded-xl px-1 py-0.5 text-[10.5px]"
+            >Estilos</span
+          >
+        </a>
+
+        <!--Node.js-->
+        <a
+          href=""
+          class="min-h-[100px] group relative rounded-3xl overflow-hidden text-center p-7 text-balance bg-gradient-to-br from-[#215732] via-[#3c873A] to-[#8cc848] border border-[#215732] flex flex-col items-start hover:scale-105 hover:contrast-125 transition-all col-span-2"
+        >
+          <span
+            class="z-10 absolute bottom-0 left-2 font-bold text-2xl group-hover:translate-y-[.8px] transition-transform"
+            >Node.js</span
+          >
+          <svg
+            width="100"
+            height="100"
+            class="absolute -right-2 -bottom-2 -rotate-6 size-20 group-hover:-rotate-12 group-hover:scale-105 transition-transform"
+          >
+            <use xlink:href="./assets/sprite.svg#node"></use>
+          </svg>
+          <span
+            class="absolute top-2 left-2 border rounded-xl px-1 py-0.5 text-xs"
+            >Backend</span
+          >
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
